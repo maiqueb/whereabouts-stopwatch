@@ -1,0 +1,19 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: {{ .NetworkName }}
+  namespace: {{ .Namespace }}
+spec:
+  config: '{
+      "cniVersion": "0.3.0",
+      "type": "macvlan",
+      "master": "{{ .LowerDevice }}",
+      "mode": "bridge",
+      "ipam": {
+        "type": "whereabouts",
+        "leader_lease_duration": {{ .LeaseDuration }},
+        "leader_renew_deadline": {{ .RenewDeadline }},
+        "leader_retry_period": {{ .RetryPeriod }},
+        "range": "{{ .SubnetRange }}"
+      }
+    }'

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: {{ .AppName }}
+  namespace: {{ .Namespace }}
+  labels:
+    tier: {{ .AppName }}
+spec:
+  replicas: {{ .NumberOfReplicas }}
+  selector:
+    matchLabels:
+      tier: {{ .AppName }}
+  template:
+    metadata:
+      labels:
+        tier: {{ .AppName }}
+      annotations:
+        k8s.v1.cni.cncf.io/networks: {{ .NetworkName }}
+      namespace: {{ .Namespace }}
+    spec:
+      containers:
+      - name: samplepod
+        command: ["/bin/ash", "-c", "trap : TERM INT; sleep infinity & wait"]
+        image: quay.io/dougbtv/alpine:latest
