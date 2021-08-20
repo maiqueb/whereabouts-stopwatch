@@ -35,7 +35,7 @@ replicaset.apps/whereabouts-scale-test created
 End: 11:27:47.597009203
 ```
 
-**Note:** the above figures come from a local deployment Kubernetes, with 3 nodes (VMs on a laptop).
+**Note:** the above figures come from a locally deployed Kubernetes, with 3 nodes (just VMs on a laptop).
 
 ## Templating tool examples
 ```bash
