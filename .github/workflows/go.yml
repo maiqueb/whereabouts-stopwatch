@@ -22,4 +22,4 @@ jobs:
       run: mkdir -p build/bin/ && go build -v -o build/bin/templating-device cmd/templating-device.go
 
     - name: Test
-      run: go test -v cmd/templating-device.go cmd/templating-device_test.go
+      run: mkdir -p deployment && go test -v cmd/templating-device.go cmd/templating-device_test.go
