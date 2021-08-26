@@ -66,4 +66,9 @@ $ build/bin/templating-device --ipam-range 10.10.0.0/16 \
     --output-dir deployment \
     --retry-period 15
 ```
+## Running the tests
+Tests can be ran by:
+```bash
+$ make test
+```
 
