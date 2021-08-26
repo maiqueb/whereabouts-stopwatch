@@ -22,3 +22,6 @@ build: $(GO) format
 
 clean:
 	rm -rf deployment/* build/*
+
+test:
+	$(GO) test -v cmd/templating-device.go cmd/templating-device_test.go
