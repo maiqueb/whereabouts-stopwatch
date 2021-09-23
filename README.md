@@ -1,4 +1,7 @@
 # whereabouts-stopwatch
+[![Go](https://github.com/maiqueb/whereabouts-stopwatch/actions/workflows/go.yml/badge.svg)](https://github.com/maiqueb/whereabouts-stopwatch/actions/workflows/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/maiqueb/whereabouts-stopwatch)](https://goreportcard.com/report/github.com/maiqueb/whereabouts-stopwatch)
+
 Templating engine + script to see how Whereabouts reacts to massive pod creation
 
 ## Dependencies
