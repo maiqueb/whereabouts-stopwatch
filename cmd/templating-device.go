@@ -94,6 +94,9 @@ func (td templatingDevice) preRenderedTemplate(inputFile string) *template.Templ
 }
 
 func (td templatingDevice) spit(outputDir string) error {
+	if err := os.MkdirAll(outputDir, 0700); err != nil {
+		return fmt.Errorf("failed to ensure dir %q exists: %w", outputDir, err)
+	}
 	for templatePath, templateData := range td.templatingEngine {
 		preRenderedTemplate, ok := td.results[templatePath]
 		if !ok {
